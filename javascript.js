@@ -27,7 +27,7 @@ buttons.forEach((button) => {
     //RESOURCE: https://stackoverflow.com/questions/4728144/check-variable-equality-against-a-list-of-values
     if (['+', '-', '*', '/',].includes(value)) {
       if(operator){
-        firstNumber = operate(operator,parseInt(firstNumber),parseInt(secondNumber));
+        firstNumber = operate(operator,parseFloat(firstNumber),parseFloat(secondNumber));
         secondNumber = '';
       }
       operator = value;
@@ -36,7 +36,7 @@ buttons.forEach((button) => {
     //3 - If = selected & 1/2/op exist, store operate() in 1.  Reset 2. Reset op.
     if(value === '='){
       if(firstNumber && operator && secondNumber){
-        firstNumber = operate(operator,parseInt(firstNumber),parseInt(secondNumber));
+        firstNumber = operate(operator,parseFloat(firstNumber),parseFloat(secondNumber));
         secondNumber = '';
         operator = '';
       }
@@ -87,5 +87,8 @@ function multiply(firstNumber, secondNumber){
 };
 
 function divide(firstNumber, secondNumber){
+    if(secondNumber === 0){
+      return 'ERROR';
+    }
     return firstNumber / secondNumber;
 };
