@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#calcDisplay {
+    display: flex;
+    background-color: lightgrey;
+    justify-content: flex-end;
+    height: 50px;
+    font-size: 1em;
+}
